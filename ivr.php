@@ -143,8 +143,8 @@ switch ($optInput) {
         if ($extInfo == "timeout" || $extension == "") {
             die("EXEC Playback goodbye");
         }
-        $callerid = $agiVars['callerid'];
-        if(trim($extension) == trim($callerid)) {
+        $callerExten = $agiVars['accountcode'];
+        if(trim($extension) == trim($callerExten)) {
             die("EXEC Playback sorry-cant-let-you-do-that\n");
         } else {
             agiWrite("EXEC Dial " . trim($agiVars['type']) . "/" . $extension . ",10");
